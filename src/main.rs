@@ -26,6 +26,6 @@ fn main() {
 		.powerset()
 		.filter(|set| !set.is_empty())
 		.filter(|set| set.into_iter().map(|n| *n).sum::<i64>() == 0)
-		.map(|set| set.into_iter().map(|num| num / 100).collect_vec())
-		.for_each(|element| println!("{:?}", element))
+		.map(|set| set.into_iter().map(|num| *num as f64 / 100 as f64).collect_vec())
+		.for_each(|element| println!("{:.2?}", element))
 }
